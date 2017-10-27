@@ -22,9 +22,10 @@ export default new VueRouter({
    */
 
   routes: [
-    { path: '/', redirect: '/customer/new' },
-    { path: '/customer/new', component: load('customer/NewCustomer') },
-    { path: '/prueba', component: load('prueba/Prueba') },
+    { path: '/', redirect: '/products' },
+    { path: '/customers/new', component: load('customer/NewCustomer') },
+    { path: '/products', component: load('product/ListProduct') },
+    { path: '/products/new', component: load('product/NewProduct') },
     { path: '*', component: load('Error404') } // Not found
   ]
 })

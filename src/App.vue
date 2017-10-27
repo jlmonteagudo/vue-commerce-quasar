@@ -27,14 +27,19 @@
         <q-list no-border link inset-delimiter>
           <q-list-header>Essential Links</q-list-header>
 
-          <q-side-link item to="/customer/new" exact>
+          <q-side-link item to="/customers/new" exact>
             <q-item-side icon="people" />
             <q-item-main label="New Customer" />
           </q-side-link>
 
-          <q-side-link item to="/prueba" exact>
-            <q-item-side icon="wifi" />
-            <q-item-main label="Prueba" />
+          <q-side-link item to="/products/new" exact>
+            <q-item-side icon="book" />
+            <q-item-main label="New Product" />
+          </q-side-link>
+
+          <q-side-link item to="/products/" exact>
+            <q-item-side icon="book" />
+            <q-item-main label="List Product" />
           </q-side-link>
 
         </q-list>
@@ -42,7 +47,7 @@
 
       <div class="layout-padding">
         <div class="row">
-          <div class="col-xs-12 col-sm-6">
+          <div class="col-xs-12">
 
             <router-view />
 
@@ -96,4 +101,5 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+</style>
