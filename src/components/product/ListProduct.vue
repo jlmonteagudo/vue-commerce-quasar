@@ -9,6 +9,15 @@
       New Product
     </q-btn>
 
+    <q-field>
+      <q-input v-model="search" float-label="Search" />
+    </q-field>
+    
+    <q-btn color="primary" @click="onSearch">
+      Search Products
+    </q-btn>
+
+
     <table class="q-table">
       <thead>
         <tr>
@@ -43,15 +52,23 @@ export default {
       pagination: {
         page: 3,
         max: 10
-      }
+      },
+      search: ''
     }
   },
   methods: {
     ...mapActions({
-      findAllProducts: 'product/findAll'
+      findAllProducts: 'product/findAll',
+      searchProducts: 'product/search'
     }),
     newProduct () {
       this.$router.push({ path: '/products/new' })
+    },
+    onSearch () {
+      console.log('sent to store: ', this.search)
+      this.searchProducts(this.search).then(() => {
+        console.log('from form final search')
+      })
     }
   },
   computed: {
